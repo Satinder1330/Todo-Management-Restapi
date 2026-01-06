@@ -1,0 +1,19 @@
+2026-01-06T09:34:31.643-05:00  INFO 35175 --- [Todo-Manager] [SpringApplicationShutdownHook] o.s.boot.tomcat.GracefulShutdown         : Commencing graceful shutdown. Waiting for active requests to complete
+2026-01-06T09:34:31.671-05:00  INFO 35175 --- [Todo-Manager] [tomcat-shutdown] o.s.boot.tomcat.GracefulShutdown         : Graceful shutdown complete
+2026-01-06T09:34:34.993-05:00  INFO 42013 --- [Todo-Manager] [main] c.l.t.T.TodoManagerApplication           : Starting TodoManagerApplication using Java 24.0.1 with PID 42013 (/Users/satindersingh/Desktop/Todo-Manager/target/classes started by satindersingh in /Users/satindersingh/Desktop/Todo-Manager)
+2026-01-06T09:34:34.995-05:00  INFO 42013 --- [Todo-Manager] [main] c.l.t.T.TodoManagerApplication           : No active profile set, falling back to 1 default profile: "default"
+2026-01-06T09:34:35.572-05:00  INFO 42013 --- [Todo-Manager] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat initialized with port 9090 (http)
+2026-01-06T09:34:35.580-05:00  INFO 42013 --- [Todo-Manager] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2026-01-06T09:34:35.580-05:00  INFO 42013 --- [Todo-Manager] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/11.0.15]
+2026-01-06T09:34:35.601-05:00  INFO 42013 --- [Todo-Manager] [main] b.w.c.s.WebApplicationContextInitializer : Root WebApplicationContext: initialization completed in 561 ms
+2026-01-06T09:34:35.796-05:00  INFO 42013 --- [Todo-Manager] [main] o.s.boot.tomcat.TomcatWebServer          : Tomcat started on port 9090 (http) with context path '/'
+2026-01-06T09:34:35.801-05:00  INFO 42013 --- [Todo-Manager] [main] c.l.t.T.TodoManagerApplication           : Started TodoManagerApplication in 1.084 seconds (process running for 1.376)
+2026-01-06T09:35:04.530-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2026-01-06T09:35:04.530-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2026-01-06T09:35:04.535-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2026-01-06T09:35:04.664-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : file name is IMG_6060.MOV
+2026-01-06T09:35:04.664-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : type of the file is video/quicktime
+2026-01-06T09:35:04.838-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : file name is 4051661592.pdf
+2026-01-06T09:35:04.838-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : type of the file is application/pdf
+2026-01-06T09:35:04.839-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : file name is ChatGPT Image Aug 1, 2025, 12_02_14 AM.png
+2026-01-06T09:35:04.839-05:00  INFO 42013 --- [Todo-Manager] [http-nio-9090-exec-1] c.l.t.T.controllers.FileController       : type of the file is image/png

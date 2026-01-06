@@ -1,15 +1,17 @@
 package com.learning.todo.Todo_Manager.services;
 
+import com.learning.todo.Todo_Manager.exceptionHandler.ResourceNotFoundExp;
 import com.learning.todo.Todo_Manager.models.Todo;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.stereotype.Component;
-
+import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Service;
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-@Component
+@Service
 public class TodoService {
 
     Logger logger = LoggerFactory.getLogger(TodoService.class);
@@ -18,9 +20,12 @@ public class TodoService {
 
     public Todo adding(Todo todo){
         int id = random.nextInt(100);
-        todo.setId(id);
+        todo.setId(id);                  // set random id
+        LocalDate currentDate = LocalDate.now();
+        todo.setAddedDate(currentDate);  // set addedDate automatically
+        logger.info("added date of {} is {} ",todo.getTitle(),currentDate);   // to check in the logs
         todoList.add(todo);
-        logger.info("Todos {}",this.todoList);
+        logger.info("New ToDo {}",todo);
         return todo;
     }
 
@@ -28,13 +33,16 @@ public class TodoService {
         logger.info("list is {} ",todoList);
         return todoList;
     }
+
     public Todo single(Integer id){
         Todo todo1=todoList.stream()
-                .filter(todo -> todo.getId()==id)
+                .filter(todo -> todo.getId().equals(id))
                 .findFirst()
-                .orElse(null);
+                .orElseThrow(()->new ResourceNotFoundExp(("Resource not found"),       //Custom exception
+                        HttpStatus.NOT_FOUND));
         return todo1;
     }
+
     public Todo update(Todo newtodo,Integer id){
         for (Todo todo : todoList) {
             if(todo.getId().equals(id)){
@@ -48,13 +56,10 @@ public class TodoService {
         }return null;
 
     }
+
     public Boolean delete(Integer id){
-       Boolean bool = todoList.removeIf(todo -> todo.getId().equals(id));
-       if(bool){return true;}
-       return false;
+       boolean bool = todoList.removeIf(todo -> todo.getId().equals(id));
+        return bool;
     }
-
-
-
 
 }

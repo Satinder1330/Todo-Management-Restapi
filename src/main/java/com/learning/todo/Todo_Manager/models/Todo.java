@@ -1,16 +1,26 @@
 package com.learning.todo.Todo_Manager.models;
+import com.fasterxml.jackson.annotation.JsonFormat;
+
+import java.time.LocalDate;
+import java.util.Date;
 
 public class Todo {
     private Integer id;
     private String title;
     private String content;
     private String status;
+    private LocalDate addedDate;
+    @JsonFormat(pattern = "yyyy-MM-dd") //change it to any format to accept the date from the user
+    private LocalDate completeBefore;
 
-    public Todo(Integer id, String title, String content, String status) {
+    public Todo(Integer id, String title, String content,
+                String status, LocalDate addedDate, LocalDate completeBefore) {
         this.id = id;
         this.title = title;
         this.content = content;
         this.status = status;
+        this.addedDate = addedDate;
+        this.completeBefore = completeBefore;
     }
 
     public String getTitle() {
@@ -21,8 +31,7 @@ public class Todo {
         this.title = title;
     }
 
-    public Todo() {
-    }
+    public Todo() { }
 
     public Integer getId() {
         return id;
@@ -31,8 +40,6 @@ public class Todo {
     public void setId(Integer id) {
         this.id = id;
     }
-
-
 
     public String getContent() {
         return content;
@@ -50,6 +57,22 @@ public class Todo {
         this.status = status;
     }
 
+    public LocalDate getAddedDate() {
+        return addedDate;
+    }
+
+    public void setAddedDate(LocalDate addedDate) {
+        this.addedDate = addedDate;
+    }
+
+    public LocalDate getCompleteBefore() {
+        return completeBefore;
+    }
+
+    public void setCompleteBefore(LocalDate completeBefore) {
+        this.completeBefore = completeBefore;
+    }
+
     @Override
     public String toString() {
         final StringBuilder sb = new StringBuilder("Todo{");
@@ -57,6 +80,8 @@ public class Todo {
         sb.append(", title='").append(title).append('\'');
         sb.append(", content='").append(content).append('\'');
         sb.append(", status='").append(status).append('\'');
+        sb.append(", addedDate=").append(addedDate);
+        sb.append(", completeBefore=").append(completeBefore);
         sb.append('}');
         return sb.toString();
     }

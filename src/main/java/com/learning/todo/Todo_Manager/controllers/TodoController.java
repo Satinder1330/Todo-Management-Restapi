@@ -14,15 +14,14 @@ import java.util.List;
 @RestController
 @RequestMapping("/todos")
 public class TodoController {
+
     Logger logger = LoggerFactory.getLogger(TodoController.class);
 
     @Autowired
     private TodoService todoService;
 
-
     @PostMapping("/add")
     public ResponseEntity<Todo> add(@RequestBody Todo todo){
-       // todo.setId(random.nextInt(100));
         logger.info("Creating the todo ");
         Todo todo1 = todoService.adding(todo);
         return new ResponseEntity<>(todo1, HttpStatus.CREATED);
@@ -57,4 +56,6 @@ public class TodoController {
         }else
             return new ResponseEntity<>("Unable to delete your element please double check your id ",HttpStatus.OK);
     }
+
+
 }
