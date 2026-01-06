@@ -11,6 +11,7 @@ Build Tool: Maven
 Testing: Postman
 Data Handling: Jackson (JSON), MultipartFile (File Uploads)
 
+<<<<<<< HEAD
 ##  Key Features
 
 ### 1. Core Todo Management (CRUD)
@@ -51,3 +52,28 @@ Open the project in IntelliJ IDEA.
 Let Maven download dependencies.
 Run TodoApplication.java.
 The API will start at http://localhost:9090.
+=======
+##  Technologies Used
+- Java 17
+- Spring Boot 4
+- Maven
+- Postman (for API testing)
+
+##  Features
+- **GET** all todos
+- **GET** a specific todo by ID
+- **POST** create a new todo
+- **PUT** update an existing todo
+- **DELETE** remove a todo
+- Global Exception Handling (404 Not Found, 400 Bad Request)
+
+##  How to Run
+1. Clone the repository.
+2. Open in IntelliJ IDEA.
+3. Run `TodoApplication.java`.
+4. API runs at `http://localhost:9090`.
+
+##  Future Improvements
+- Connect to H2/MySQL Database.
+- Add Unit Testing (JUnit).
+>>>>>>> b986000db2b2e09235ce2f9951d69c891c295f59
