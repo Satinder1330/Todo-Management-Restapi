@@ -4,7 +4,7 @@ This project has evolved from simple CRUD operations to include advanced feature
 **File/Image Handling**, **Date Management**, and a  **Centralized Error Handling**
 mechanism using custom response wrappers.
 
-## 🛠 Technologies Used
+##  Technologies Used
 Language: Java 17.
 Framework: Spring Boot 3+.
 Build Tool: Maven.
@@ -32,28 +32,28 @@ ResourceNotFoundException (Runtime) triggers when info are invalid.
 Custom Error Response:
 custom exception  return a consistent Custom Response Object (JSON).
 
-##  API Endpoints
+##  API Endpoints:-
 
-## 1.Todo Operations
+### 1.Todo Operations
 - POST: /todos/add : Creates a new Todo item.
 - GET: /todos/fullList : Retrieves the complete list of Todos.
 - GET: /todos/single/{id} : Fetches a specific Todo by ID.
 - PUT: /todos/update/{id} : Updates an existing Todo.
 - DELETE: /todos/delete/{id} : Deletes a Todo by ID.
 - 
-## 2.File Operations
+### 2.File Operations
 - POST: /file/singleUpload : Uploads a single file (form-data key: image).
 - POST: /file/multiple : Uploads multiple files (form-data key: files).
 - GET: /file/getImage : Downloads/Views the hardcoded example image.
 - GET: /file/getFile : Downloads/Views the hardcoded example PDF.
 
-## ⚙️ How to Run
+##  How to Run
 - Clone the repository.
 - Open the project in IntelliJ IDEA.
 - Let Maven download dependencies.
 - Run TodoApplication.java.
 - The API will start at http://localhost:9090.
-=======
+
 ##  Technologies Used
 - Java 17
 - Spring Boot 4
@@ -66,7 +66,7 @@ custom exception  return a consistent Custom Response Object (JSON).
 - **POST** create a new todo
 - **PUT** update an existing todo
 - **DELETE** remove a todo
-- Global Exception Handling (404 Not Found, 400 Bad Request)
+- Global Exception Handling 
 
 ##  How to Run
 1. Clone the repository.
@@ -77,4 +77,3 @@ custom exception  return a consistent Custom Response Object (JSON).
 ##  Future Improvements
 - Connect to H2/MySQL Database.
 - Add Unit Testing (JUnit).
->>>>>>> b986000db2b2e09235ce2f9951d69c891c295f59
