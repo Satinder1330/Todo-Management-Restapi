@@ -35,17 +35,17 @@ custom exception  return a consistent Custom Response Object (JSON).
 ##  API Endpoints
 
 ## 1.Todo Operations
-- POST /todos/add : Creates a new Todo item.
-- GET /todos/fullList : Retrieves the complete list of Todos.
-- GET /todos/single/{id} : Fetches a specific Todo by ID.
-- PUT /todos/update/{id} : Updates an existing Todo.
-- DELETE /todos/delete/{id} : Deletes a Todo by ID.
+- POST: /todos/add : Creates a new Todo item.
+- GET: /todos/fullList : Retrieves the complete list of Todos.
+- GET: /todos/single/{id} : Fetches a specific Todo by ID.
+- PUT: /todos/update/{id} : Updates an existing Todo.
+- DELETE: /todos/delete/{id} : Deletes a Todo by ID.
 - 
 ## 2.File Operations
-- POST /file/singleUpload : Uploads a single file (form-data key: image).
-- POST /file/multiple : Uploads multiple files (form-data key: files).
-- GET /file/getImage : Downloads/Views the hardcoded example image.
-- GET /file/getFile : Downloads/Views the hardcoded example PDF.
+- POST: /file/singleUpload : Uploads a single file (form-data key: image).
+- POST: /file/multiple : Uploads multiple files (form-data key: files).
+- GET: /file/getImage : Downloads/Views the hardcoded example image.
+- GET: /file/getFile : Downloads/Views the hardcoded example PDF.
 
 ## ⚙️ How to Run
 - Clone the repository.
