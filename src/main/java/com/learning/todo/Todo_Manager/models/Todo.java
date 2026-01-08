@@ -1,20 +1,20 @@
 package com.learning.todo.Todo_Manager.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
-
 import java.time.LocalDate;
-import java.util.Date;
+import java.sql.Date;
+
 
 public class Todo {
     private Integer id;
     private String title;
     private String content;
     private String status;
-    private LocalDate addedDate;
+    private Date addedDate;
     @JsonFormat(pattern = "yyyy-MM-dd") //change it to any format to accept the date from the user
-    private LocalDate completeBefore;
+    private Date completeBefore;
 
     public Todo(Integer id, String title, String content,
-                String status, LocalDate addedDate, LocalDate completeBefore) {
+                String status, Date addedDate, Date completeBefore) {
         this.id = id;
         this.title = title;
         this.content = content;
@@ -57,19 +57,20 @@ public class Todo {
         this.status = status;
     }
 
-    public LocalDate getAddedDate() {
-        return addedDate;
+    public Date getAddedDate() {
+        return Date.valueOf(LocalDate.now());
     }
 
-    public void setAddedDate(LocalDate addedDate) {
-        this.addedDate = addedDate;
+    public void setAddedDate(Date addedDate) {
+
+        this.addedDate = Date.valueOf(LocalDate.now());
     }
 
-    public LocalDate getCompleteBefore() {
+    public Date getCompleteBefore() {
         return completeBefore;
     }
 
-    public void setCompleteBefore(LocalDate completeBefore) {
+    public void setCompleteBefore(Date completeBefore) {
         this.completeBefore = completeBefore;
     }
 
@@ -82,7 +83,8 @@ public class Todo {
         sb.append(", status='").append(status).append('\'');
         sb.append(", addedDate=").append(addedDate);
         sb.append(", completeBefore=").append(completeBefore);
-        sb.append('}');
+        sb.append("}\n");
         return sb.toString();
     }
+
 }
