@@ -1,20 +1,22 @@
-package com.learning.todo.Todo_Manager.services;
+package com.learning.todo.Todo_Manager.services.implementation;
 
 import com.learning.todo.Todo_Manager.exceptionHandler.ResourceNotFoundExp;
 import com.learning.todo.Todo_Manager.models.Todo;
+import com.learning.todo.Todo_Manager.services.TodoServices;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
+import java.sql.Date;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
 @Service
-public class TodoService {
+public class TodoServiceImpl implements TodoServices {
 
-    Logger logger = LoggerFactory.getLogger(TodoService.class);
+    Logger logger = LoggerFactory.getLogger(TodoServiceImpl.class);
     Random random = new Random();
     List<Todo>todoList = new ArrayList<>();
 
@@ -22,7 +24,7 @@ public class TodoService {
         int id = random.nextInt(100);
         todo.setId(id);                  // set random id
         LocalDate currentDate = LocalDate.now();
-        todo.setAddedDate(currentDate);  // set addedDate automatically
+        todo.setAddedDate(Date.valueOf(LocalDate.now() ));  // set addedDate automatically
         logger.info("added date of {} is {} ",todo.getTitle(),currentDate);   // to check in the logs
         todoList.add(todo);
         logger.info("New ToDo {}",todo);
