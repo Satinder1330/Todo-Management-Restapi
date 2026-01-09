@@ -9,6 +9,8 @@ Language: Java 17.
 Framework: Spring Boot 3+.
 Build Tool: Maven.
 Testing: Postman.
+Database: MySql
+Api:Spring Jdbc
 Data Handling: Jackson (JSON), MultipartFile (File Uploads).
 
 
@@ -31,6 +33,12 @@ Custom Exceptions:
 ResourceNotFoundException (Runtime) triggers when info are invalid.
 Custom Error Response:
 custom exception  return a consistent Custom Response Object (JSON).
+
+### 4. Database Integration (Spring JDBC)
+ MySQL integration using Spring JDBC (JdbcTemplate)
+Tables created automatically at application startup
+
+
 
 ##  API Endpoints:-
 
@@ -68,12 +76,5 @@ custom exception  return a consistent Custom Response Object (JSON).
 - **DELETE** remove a todo
 - Global Exception Handling 
 
-##  How to Run
-1. Clone the repository.
-2. Open in IntelliJ IDEA.
-3. Run `TodoApplication.java`.
-4. API runs at `http://localhost:9090`.
 
-##  Future Improvements
-- Connect to H2/MySQL Database.
-- Add Unit Testing (JUnit).
+
