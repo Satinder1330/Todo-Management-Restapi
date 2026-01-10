@@ -59,9 +59,10 @@ public class TodoServiceImpl implements TodoServices {
 
     }
 
-    public Boolean delete(Integer id){
+    public void delete(Integer id){
        boolean bool = todoList.removeIf(todo -> todo.getId().equals(id));
-        return bool;
+       if(bool)logger.info("Todo of the given id has been deleted");
+       else logger.info("Todo of the given id is not found");
     }
 
 }

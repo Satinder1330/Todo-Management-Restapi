@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 @Service
-@Primary
+//@Primary
 public class TodoRepositoryImp implements TodoServices {
     @Autowired
     private TodoRepository todoRepository;
@@ -35,7 +35,7 @@ public class TodoRepositoryImp implements TodoServices {
     }
 
     @Override
-    public Boolean delete(Integer id) {
-        return todoRepository.delete(id);
+    public void delete(Integer id) {
+        todoRepository.delete(id);
     }
 }

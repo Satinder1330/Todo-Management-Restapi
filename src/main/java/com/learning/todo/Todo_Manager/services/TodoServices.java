@@ -9,6 +9,6 @@ public interface TodoServices {
     public List<Todo> getList();
     public Todo single(Integer id);
     public Todo update(Todo newtodo,Integer id);
-    public Boolean delete(Integer id);
+    public void delete(Integer id);
 
 }

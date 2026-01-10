@@ -41,20 +41,16 @@ public class TodoController {
 
     @PutMapping("/update/{id}")
     public ResponseEntity<Todo> update(@RequestBody Todo newtodo,@PathVariable Integer id){
-        if(todoServices.update(newtodo, id) == null){
-            logger.error("can not find the id ");
-            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-        }else
-            todoServices.update(newtodo,id);
-        return new ResponseEntity<>(newtodo,HttpStatus.OK);
+
+        Todo todo = todoServices.update(newtodo, id);
+        return new ResponseEntity<>(todo,HttpStatus.OK);
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<String> delete(@PathVariable Integer id){
-        if (todoServices.delete(id)){
-            return new ResponseEntity<>("Your Element is deleted Successfully",HttpStatus.OK);
-        }else
-            return new ResponseEntity<>("Unable to delete your element please double check your id ",HttpStatus.OK);
+                     todoServices.delete(id);
+            return  new ResponseEntity<>("Your Element is deleted Successfully",HttpStatus.OK);
+
     }
 
 

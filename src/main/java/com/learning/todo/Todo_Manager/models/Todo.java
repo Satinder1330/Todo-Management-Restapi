@@ -1,17 +1,40 @@
 package com.learning.todo.Todo_Manager.models;
 import com.fasterxml.jackson.annotation.JsonFormat;
+import jakarta.persistence.*;
+
 import java.time.LocalDate;
 import java.sql.Date;
 
-
+@Entity
+@Table(name="todo_jpa")
 public class Todo {
+    @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @Column(name="todo_id")
     private Integer id;
+
+    @Column(name="todo_title",length=50)
     private String title;
+
+    @Column(name="todo_content",length = 100)
     private String content;
+
+    @Column(name="todo_status",length = 10)
     private String status;
+
+    @Column(name="todo_addedDate")
     private Date addedDate;
+
+    @Column(name="todo_completeBefore")
     @JsonFormat(pattern = "yyyy-MM-dd") //change it to any format to accept the date from the user
     private Date completeBefore;
+
+    @PrePersist
+    public void prePersist() {  //jpa bypass the setters so define pre values here
+        if (this.addedDate == null) {
+            this.addedDate = Date.valueOf(LocalDate.now());
+        }
+    }
 
     public Todo(Integer id, String title, String content,
                 String status, Date addedDate, Date completeBefore) {
@@ -58,11 +81,10 @@ public class Todo {
     }
 
     public Date getAddedDate() {
-        return Date.valueOf(LocalDate.now());
+        return addedDate;
     }
 
     public void setAddedDate(Date addedDate) {
-
         this.addedDate = Date.valueOf(LocalDate.now());
     }
 
@@ -73,6 +95,7 @@ public class Todo {
     public void setCompleteBefore(Date completeBefore) {
         this.completeBefore = completeBefore;
     }
+
 
     @Override
     public String toString() {
