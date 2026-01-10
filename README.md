@@ -5,38 +5,37 @@ This project has evolved from simple CRUD operations to include advanced feature
 mechanism using custom response wrappers.
 
 ##  Technologies Used
-Language: Java 17.
-Framework: Spring Boot 3+.
-Build Tool: Maven.
-Testing: Postman.
-Database: MySql
-Api:Spring Jdbc
-Data Handling: Jackson (JSON), MultipartFile (File Uploads).
+ Language: Java 17.
+ Framework: Spring Boot 3+.
+ Build Tool: Maven.
+ Testing: Postman.
+ Database: MySql. 
+ Api:Spring Jdbc. 
+ Data Handling: Jackson (JSON), MultipartFile (File Uploads).
 
 
 ##  Key Features
 
 ### 1. Core Todo Management (CRUD)
-Create: Add new tasks with descriptions and target dates.
-Read: Fetch all tasks or find specific ones by ID.
-Update: Modify existing task details.
-Delete: Remove completed or unwanted tasks.
+- Create: Add new tasks with descriptions and target dates.
+- Read: Fetch all tasks or find specific ones by ID.
+- Update: Modify existing task details.
+- Delete: Remove completed or unwanted tasks.
 
 ### 2.  Advanced File Handling
-Image/File Upload: Support for uploading multiple images or files associated with a Todo item.
-File Retrieval: Endpoints to download or view uploaded images.
+- Image/File Upload: Support for uploading multiple images or files associated with a Todo item.
+- File Retrieval: Endpoints to download or view uploaded images.
 
 
 ### 3. Global Error Handling 
-Global Exception Handler: Implemented @ControllerAdvice to catch errors across the entire application in one place.
-Custom Exceptions:
-ResourceNotFoundException (Runtime) triggers when info are invalid.
-Custom Error Response:
-custom exception  return a consistent Custom Response Object (JSON).
+- Global Exception Handler: Implemented @ControllerAdvice to catch errors across the entire application in one place.
+- Custom Exceptions: ResourceNotFoundException (Runtime) triggers when info are invalid.
+- Custom Error Response: custom exception  return a consistent Custom Response Object (JSON).
 
-### 4. Database Integration (Spring JDBC)
- MySQL integration using Spring JDBC (JdbcTemplate)
-Tables created automatically at application startup
+### 4. Database Integration (Spring JDBC and Jpa/Hibernate)
+- MySQL integration using Spring JDBC (JdbcTemplate)
+- Tables created automatically at application startup
+- Migration from JDBC to JPA/Hibernate(CRUD operations)
 
 
 
@@ -63,18 +62,19 @@ Tables created automatically at application startup
 - The API will start at http://localhost:9090.
 
 ##  Technologies Used
-- Java 17
-- Spring Boot 4
-- Maven
+- Java 17,
+- Spring Boot 4,
+- Maven,
+- Jpa/Hibernate,
 - Postman (for API testing)
 
 ##  Features
-- **GET** all todos
-- **GET** a specific todo by ID
-- **POST** create a new todo
-- **PUT** update an existing todo
-- **DELETE** remove a todo
-- Global Exception Handling 
+- **GET** all todos,
+- **GET** a specific todo by ID,
+- **POST** create a new todo,
+- **PUT** update an existing todo,
+- **DELETE** remove a todo,
+- Global Exception Handling ,
 
 
 
